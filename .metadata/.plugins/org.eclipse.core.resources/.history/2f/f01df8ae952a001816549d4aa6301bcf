@@ -1,0 +1,91 @@
+package oop;
+
+public class BankAccount {
+
+	String bankname = "HDFC";
+	String accounttype;
+	private static final int ifsc_code = 20125;
+	int accountnumber;
+	private String name;
+	private int aadhar;
+	double balance = 0;
+	
+	/*Constructor definitions: unique methods
+	 * 1. They are used to define/setup/initialize properties of an object
+	 * 2. Constructors are implicitly called upon INSTANTIATION
+	 * 3. The same name as the class name
+	 * 4. Constructors have no return type 
+	 */
+	
+	BankAccount(){
+		System.out.println("NEW ACCOUNT CREATED IN " + bankname);
+			}
+	
+	//Overloading: call same method with different arguments
+	BankAccount(String accounttype){
+		System.out.println("The account type is " + accounttype);
+	}
+	BankAccount(int accountnumber, double initialdeposit ){
+		System.out.println("The account number is " + accountnumber);
+		System.out.println("Initial deposit is $: " + initialdeposit);
+		String Msg = null;
+		if (initialdeposit < 1000) {
+			Msg = "Error: Initial deposit must be at least $1000";
+		}
+			else {
+			Msg = "Thanks for your depsoit of : " + initialdeposit;
+			}
+		System.out.println(Msg);
+		balance = balance + initialdeposit;
+		}
+	
+	
+	//Define methods
+	public void Deposit(double amount) {
+		balance = amount + balance;
+		showActivity("DEPOSIT");
+		
+		}
+
+	void withdraw(double amount) {
+		balance = balance - amount;
+		showActivity("WITHDRAW");
+		
+	}
+	
+	private void showActivity (String activity) {
+		System.out.println("NEW ACTIVITY " + activity);
+		System.out.println("BALANCE is : $" + balance);
+		}
+	
+	// Getters and Setters
+	// Allowing user to set the name
+	
+	public void getName (String name) {
+		this.name = "NAME :" + "Mr. " + name;
+	}
+	
+	public String setName () {
+		return name;
+	}
+		
+	public int setAadhar() {
+		return aadhar;
+	}
+
+	public void getAadhar(int aadhar) {
+		this.aadhar = aadhar;
+	}
+
+	void CheckBalance() {
+		System.out.println("Balance is : $" + balance);
+	}
+	void getStatus() {
+}
+	@Override
+	public String toString() {
+		return "[" + "NAME :" + name + "," + " ACCOUNT NUMBER :" + accountnumber + " ," 
+	    + "IFSC :" + ifsc_code + " ," + "BALANCE :$" + balance + "]";
+	}
+}
+	

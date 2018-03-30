@@ -1,0 +1,22 @@
+package oop;
+
+public class BankAccount {
+
+	String bankname;
+	String accounttype;
+	int accountnumber;
+	String name;
+	double initaildeposit;
+	
+	BankAccount(){
+		System.out.println("NEW ACCOUNT CREATED IN" + bankname);
+			}
+	
+	void Deposit() {
+		
+}
+
+	void withdraw() {
+		
+	}
+}

@@ -1,0 +1,21 @@
+package oop;
+
+public class AccountApp {
+
+	public static void main(String[] args) {
+         
+		LoanAccount la = new LoanAccount();
+		la.setRate();
+		la.IncreaseRate();
+		la.setTerm(20);
+		la.ammsched();
+
+		IRate account1 = new LoanAccount();
+		account1.setRate();
+		account1.IncreaseRate();
+		
+		
+		
+	}
+
+}

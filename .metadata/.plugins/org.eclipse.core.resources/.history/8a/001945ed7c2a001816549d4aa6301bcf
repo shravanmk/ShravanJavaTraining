@@ -1,0 +1,15 @@
+package oop;
+
+public class BankAccountApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		BankAccount acc1 = new BankAccount();
+		System.out.println("The IFSC CODE is " + acc1.ifsc_code);
+		BankAccount acc2 = new BankAccount("SAVINGS ACCOUNT");
+		BankAccount acc3 = new BankAccount(12345,1000000);
+		//BankAccount acc4 = new BankAccount("SAVINGS ACCOUNT");
+		}
+
+}

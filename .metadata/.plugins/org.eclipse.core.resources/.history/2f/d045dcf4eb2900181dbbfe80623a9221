@@ -1,0 +1,28 @@
+package oop;
+
+public class BankAccount {
+
+	String bankname = "HDFC";
+	String accounttype;
+	int accountnumber;
+	String name;
+	double initaildeposit;
+	
+	BankAccount(){
+		System.out.println("NEW ACCOUNT CREATED IN " + bankname);
+			}
+	BankAccount(String accounttype){
+		System.out.println("The account type is " + accounttype);
+	}
+	BankAccount(int accountnumber, double initaildeposit ){
+		System.out.println("The account number is " + accountnumber + " and deposit is " + initaildeposit);
+	}
+	
+	void Deposit() {
+		
+}
+
+	void withdraw() {
+		
+	}
+}

@@ -1,0 +1,68 @@
+package oop;
+
+public class BankAccount {
+
+	String bankname = "HDFC";
+	String accounttype;
+	static final int ifsc_code = 20125;
+	int accountnumber;
+	String name;
+	double balance = 0;
+	
+	/*Constructor definitions: unique methods
+	 * 1. They are used to define/setup/initialize properties of an object
+	 * 2. Constructors are implicitly called upon INSTANTIATION
+	 * 3. The same name as the class name
+	 * 4. Constructors have no return type 
+	 */
+	
+	BankAccount(){
+		System.out.println("NEW ACCOUNT CREATED IN " + bankname);
+			}
+	
+	//Overloading: call same method with different arguments
+	BankAccount(String accounttype){
+		System.out.println("The account type is " + accounttype);
+	}
+	BankAccount(int accountnumber, double initialdeposit ){
+		System.out.println("The account number is " + accountnumber);
+		System.out.println("Initial deposit is $: " + initialdeposit);
+		String Msg = null;
+		if (initialdeposit < 1000) {
+			Msg = "Error: Initial deposit must be at least $1000";
+		}
+			else {
+			Msg = "Thanks for your depsoit of : " + initialdeposit;
+			}
+		System.out.println(Msg);
+		balance = balance + initialdeposit;
+		}
+	
+	void Deposit(double amount) {
+		balance = amount + balance;
+		showActivity("DEPOSIT");
+		
+		}
+
+	void withdraw(double amount) {
+		balance = amount + balance;
+		showActivity("WITHDRAW");
+		
+	}
+	
+	private void showActivity (String activity) {
+		System.out.println("DEPOSIT of : $" + balance);
+		System.out.println("WITHDRAW of : $" + balance);
+		}
+	
+	void CheckBalance() {
+		System.out.println("Balance is : $" + balance);
+	}
+	void getStatus() {
+}
+	@Override
+	public String toString() {
+		return "[" + name + "." + accountnumber + "." + balance + "]";
+	}
+}
+	
